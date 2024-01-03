@@ -1,0 +1,4 @@
+#!/bin/bash
+as main.s -o main.o
+gcc main.o -o main -nostdlib -static
+./main
