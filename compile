@@ -1,4 +1,4 @@
 #!/bin/bash
-as main.s -o main.o
-gcc main.o -o main -nostdlib -static
+as main.s -g -o main.o
+gcc main.o -g -o main -nostdlib -static
 ./main
