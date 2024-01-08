@@ -48,26 +48,26 @@
 			xor rdi, rdi
 			syscall
 
-	text_hello_world:
-		.asciz "Hello World\n"
-	text_how_far_do_you_want_to_go:
-		.asciz "How Far Do You Want to Go = "
-	text_goodbye:
-		.asciz "\nGoodbye\n"
-	printf:
-		mov rax, 1
-		mov rdi, 1
-		syscall
-		xor rdi, rdi
-		ret
-	scanf:
-		mov rax, 0
-		mov rdi, 0
-		syscall
-		mov rax, 0
-		mov rdi, 0
-		mov rsi, [new_line_collector]
-		mov rdx, 1
-		syscall
-		xor rdi, rdi
-		ret
+		text_hello_world:
+			.asciz "Hello World\n"
+		text_how_far_do_you_want_to_go:
+			.asciz "How Far Do You Want to Go = "
+		text_goodbye:
+			.asciz "\nGoodbye\n"
+		printf:
+			mov rax, 1
+			mov rdi, 1
+			syscall
+			xor rdi, rdi
+			ret
+		scanf:
+			mov rax, 0
+			mov rdi, 0
+			syscall
+			mov rax, 0
+			mov rdi, 0
+			mov rsi, [new_line_collector]
+			mov rdx, 1
+			syscall
+			xor rdi, rdi
+			ret
