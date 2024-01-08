@@ -23,7 +23,7 @@
 		call scanf
 		mov r8, 1
 		mov r9, 0
-		push bx
+		push r8
 		loop:
 		mov bl, 0x30
 		cmp bl, count
