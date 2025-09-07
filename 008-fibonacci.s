@@ -21,26 +21,24 @@
 		lea rsi, [count]
 		mov rdx, 1
 		call scanf
-		
-	    mov r8, 1
-	    mov r9, 0
-	    push bx
-	
-	    loop:
-	    	mov bl, 0x30
-	    	cmp bl, count
-   	        jae exit
-   	        dec byte ptr count
-	        add r8, r9
-	        push r9
-	        mov r10, r9
-	        add r10, '0'
-	        mov number, r10
-	        lea rsi, [number]
-	        mov rdx, 1
-	        call printf
-	        xchg r8, r9
-			jmp loop
+		mov r8, 1
+		mov r9, 0
+		push bx
+		loop:
+		mov bl, 0x30
+		cmp bl, count
+		jae exit
+		dec byte ptr count
+		add r8, r9
+		push r9
+		mov r10, r9
+		add r10, '0'
+		mov number, r10
+		lea rsi, [number]
+		mov rdx, 1
+		call printf
+		xchg r8, r9
+		jmp loop
 		//exit
 		exit:
 			lea rsi, [text_goodbye]
